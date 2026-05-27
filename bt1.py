@@ -1,12 +1,12 @@
-print("—— PHẦN MỀM TÍNH TỔNG QUỸ LƯƠNG ——")
+tong_tien = int(input("Nhập tổng tiền hóa đơn ban đầu: "))
 
-total_budget = 0
+if tong_tien >= 500000:
+    giam_gia = tong_tien * 10 / 100
+else:
+    giam_gia = 0
 
-for employee_number in range(1, 4):
-    print("Đang xử lý nhân viên số", employee_number)
-    salary = int(input("  Nhập mức lương (VNĐ): "))
-    total_budget = total_budget + salary
+thanh_toan = tong_tien - giam_gia
 
-print("= KẾT QUẢ: TỔNG NGÂN SÁCH CẦN CHUẨN BỊ LÀ:", total_budget, "VNĐ")
-
-# lối đặt total_budget ở trong vòng lập dẫn đến reset về 0 mỗi khi lập
+print("--- HÓA ĐƠN THANH TOÁN RIKKEI STORE ---")
+print("Số tiền được giảm giá:", int(giam_gia), "VND")
+print("Tổng tiền khách phải trả:", int(thanh_toan), "VND")
