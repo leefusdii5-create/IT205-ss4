@@ -1,18 +1,17 @@
-print("—- HỆ THỐNG GỬI EMAIL THƯỞNG TẾT —-")
+tong_doanh_thu = 0
+so_ngay_dat_muc_tieu = 0
 
-for employee_number in range(1, 4):
-    print("—- Đang xử lý nhân viên số", employee_number, "—-")
+for ngay in range(1, 8):
+    doanh_thu = int(input(f"Nhập doanh thu Ngày {ngay}: "))
     
-    working_days = int(input("Nhập số ngày công trong tháng: "))
-    
-    if working_days == 0:
-        print("CẢNH BÁO: Nhân viên nghỉ cả tháng. Không xét duyệt thưởng.")
-    else:
-        bonus_amount = working_days * 200000
-        print("-> Đã gửi Email: Chúc mừng nhận được", bonus_amount, "VNĐ tiền thưởng!")
-        
-    print("————————————————————————————————————————————\n")
+    tong_doanh_thu += doanh_thu
 
-print("Đã hoàn tất quá trình duyệt thưởng cho 3 nhân viên!")
+    if doanh_thu >= 5000000:
+        so_ngay_dat_muc_tieu += 1
 
-#không có else thì điều kiện vẫn se chạy các dòng dưới 
+trung_binh = tong_doanh_thu / 7
+
+print("--- BÁO CÁO DOANH THU TUẦN RIKKEI STORE ---")
+print("Tổng doanh thu cả tuần:", int(tong_doanh_thu), "VND")
+print("Doanh thu trung bình mỗi ngày:", int(trung_binh), "VND")
+print("Số ngày đạt doanh thu mục tiêu (>= 5,000,000 VND):", so_ngay_dat_muc_tieu, "ngày")
