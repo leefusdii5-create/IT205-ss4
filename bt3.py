@@ -1,17 +1,21 @@
-for i in range(1, 4):
-    print("--- NHẬP THÔNG TIN NHÂN VIÊN ---")
-    
-    ma_nv = input("Mã nhân viên: ")
-    ho_ten = input("Họ và tên nhân viên: ")
-    phong_ban = input("Phòng ban công tác: ")
-    
-    if ma_nv == "" or ma_nv == " " or ho_ten == "" or ho_ten == " ":
-        print("[CẢNH BÁO] Dữ liệu tên hoặc mã không hợp lệ! Hủy bỏ tạo hồ sơ cho nhân viên này.")
-    else:
-        print("--- PHIẾU HỒ SƠ ĐIỆN TỬ ---")
-        print("Mã nhân viên:", ma_nv)
-        print("Họ và tên:", ho_ten)
-        print("Phòng ban:", phong_ban)
-        print("---------------------------")
+so_hoa_don = int(input("Nhập số lượng hóa đơn trong ca: "))
 
-print("Chương trình hoàn thành.")
+max_hoa_don = 0
+min_hoa_don = 0
+
+for i in range(1, so_hoa_don + 1):
+    hoa_don = int(input(f"Nhập giá trị hóa đơn thứ {i}: "))
+
+    if i == 1:
+        max_hoa_don = hoa_don
+        min_hoa_don = hoa_don
+
+    if hoa_don > max_hoa_don:
+        max_hoa_don = hoa_don
+
+    if hoa_don < min_hoa_don:
+        min_hoa_don = hoa_don
+
+print("--- KẾT QUẢ KIỂM TOÁN CA RIKKEI STORE ---")
+print("Hóa đơn có giá trị cao nhất:", max_hoa_don, "VND")
+print("Hóa đơn có giá trị thấp nhất:", min_hoa_don, "VND")
