@@ -1,11 +1,21 @@
-print("———— HỆ THỐNG KHAI BÁO NHÂN SỰ MỚI ————")
+ma_so_bi_an = 79
+doan_dung = False
 
-while True:
-    so_luong = int(input("Vui lòng nhập số lượng nhân sự mới trong tháng này: "))
-    if so_luong <= 0:
-        print("[LỖI] Số lượng không hợp lệ! Vui lòng nhập một con số lớn hơn 0.\n")
-    else:
-        print(f"[THÀNH CÔNG] Đã ghi nhận yêu cầu cấp phát tài sản cho {so_luong} nhân sự mới!")
+for luot in range(1, 6):
+    so_doan = int(input(f"Lượt đoán {luot} - Nhập số của bạn: "))
+
+    if so_doan == ma_so_bi_an:
+        print("=> Chúc mừng! Bạn đã đoán chính xác mã số may mắn!")
+        doan_dung = True
         break
 
-print("———— CHƯƠNG TRÌNH KẾT THÚC ————")
+    elif so_doan < ma_so_bi_an:
+        print("=> Gợi ý: Số của bạn nhỏ hơn mã số may mắn!")
+
+    else:
+        print("=> Gợi ý: Số của bạn lớn hơn mã số may mắn!")
+
+if doan_dung == False:
+    print("=> Bạn đã hết lượt chơi. Chúc may mắn lần sau!")
+
+print("--- TRÒ CHƠI KẾT THÚC ---")
